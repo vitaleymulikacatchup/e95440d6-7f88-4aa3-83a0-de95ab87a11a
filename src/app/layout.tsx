@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
-import { Inter_Tight, Poppins } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 
 const interTight = Inter_Tight({
@@ -25,7 +25,9 @@ export default function RootLayout({
         className={`${interTight.variable} antialiased`}
         style={{ background: 'linear-gradient(135deg, #fff0f5 0%, #e8f7ff 100%)' }}
       >
-        {children}
+        <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 1, textAnimation: 'slide' }}>
+          {children}
+        </SiteThemeProvider>
       </body>
     </html>
   );
